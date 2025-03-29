@@ -13,6 +13,8 @@ export interface ButtonProps {
   label: string;
   /** Optional click handler */
   onClick?: () => void;
+  /** Text for the button */
+  text: string;
 }
 
 /** Primary UI component for user interaction */
@@ -21,6 +23,7 @@ export const Button = ({
   size = 'medium',
   backgroundColor,
   label,
+   text,
   ...props
 }: ButtonProps) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
@@ -31,7 +34,7 @@ export const Button = ({
       style={{ backgroundColor }}
       {...props}
     >
-      {label}
+      {label} {text}
     </button>
   );
 };
